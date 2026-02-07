@@ -1,0 +1,4 @@
+--patch-module
+com.food=_
+--add-reads
+com.food=ALL-UNNAMED

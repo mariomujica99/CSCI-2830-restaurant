@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="30.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.food.HomepageController">
+   <children>
+      <Label text="Welcome to Rio's Restaurant" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      
+      <ImageView fx:id="logoImage" fitHeight="150" fitWidth="150" preserveRatio="true"/>
+      
+      <Label text="Build Your Perfect Meal" style="-fx-text-fill: #7f8c8d;">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+
+      <VBox spacing="15.0" alignment="CENTER">
+         <children>
+            <Label text="MENU" style="-fx-text-fill: #34495e; -fx-font-weight: bold;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            
+            <Button fx:id="pizzaButton" text="ORDER PIZZA" onAction="#switchToPizza"
+                    prefWidth="250.0" prefHeight="50.0"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 8;"/>
+            
+            <Button fx:id="burgerButton" text="ORDER BURGER" onAction="#switchToBurger"
+                    prefWidth="250.0" prefHeight="50.0"
+                    style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 8;"/>
+         </children>
+      </VBox>
+
+      <Button fx:id="receiptButton" text="VIEW CART &amp; CHECKOUT" onAction="#switchToReceipt"
+              prefWidth="250.0" prefHeight="50.0"
+              style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 8;"/>
+
+   </children>
+   <padding>
+      <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+   </padding>
+</VBox>

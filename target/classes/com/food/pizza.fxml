@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Separator?>
+
+<VBox alignment="TOP_CENTER" spacing="25.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.food.PizzaController">
+    <children>
+        <Label text="Build Your Pizza" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;">
+            <font>
+                <Font size="28.0" />
+            </font>
+        </Label>
+
+        <Separator prefWidth="500.0" style="-fx-background-color: #bdc3c7;"/>
+
+        <!-- Crust Section -->
+        <VBox spacing="10.0" alignment="CENTER">
+            <Label text="CRUST STYLE" style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <fx:define>
+                <ToggleGroup fx:id="crustGroup" />
+            </fx:define>
+            <HBox alignment="CENTER" spacing="20.0">
+                <RadioButton fx:id="thinCrustRadioButton" text="Thin Crust" toggleGroup="$crustGroup"
+                           style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;"/>
+                <RadioButton fx:id="thickCrustRadioButton" text="Thick Crust" toggleGroup="$crustGroup"
+                           style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;"/>
+            </HBox>
+        </VBox>
+
+        <!-- Crust Ingredient Section -->
+        <VBox spacing="10.0" alignment="CENTER">
+            <Label text="CRUST BASE" style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <fx:define>
+                <ToggleGroup fx:id="crustIngredientGroup" />
+            </fx:define>
+            <HBox alignment="CENTER" spacing="20.0">
+                <RadioButton fx:id="flourCrustRadioButton" text="Flour" toggleGroup="$crustIngredientGroup"
+                           style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;"/>
+                <RadioButton fx:id="cauliflowerCrustRadioButton" text="Cauliflower" toggleGroup="$crustIngredientGroup"
+                           style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;"/>
+            </HBox>
+        </VBox>
+
+        <!-- Sauce Section -->
+        <VBox spacing="10.0" alignment="CENTER">
+            <Label text="SAUCE" style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <fx:define>
+                <ToggleGroup fx:id="sauceGroup" />
+            </fx:define>
+            <HBox alignment="CENTER" spacing="20.0">
+                <RadioButton fx:id="tomatoSauceRadioButton" text="Tomato" toggleGroup="$sauceGroup"
+                           style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;"/>
+                <RadioButton fx:id="alfredoSauceRadioButton" text="Alfredo" toggleGroup="$sauceGroup"
+                           style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;"/>
+            </HBox>
+        </VBox>
+
+        <!-- Toppings Section -->
+        <VBox spacing="10.0" alignment="CENTER">
+            <Label text="TOPPINGS" style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <HBox alignment="CENTER" spacing="20.0">
+                <CheckBox fx:id="pepperoniToppingRadioButton" text="Pepperoni"
+                        style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;"/>
+                <CheckBox fx:id="sausageToppingRadioButton" text="Sausage"
+                        style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;"/>
+                <CheckBox fx:id="pepperToppingRadioButton" text="Peppers"
+                        style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;"/>
+            </HBox>
+            <HBox alignment="CENTER" spacing="20.0">
+                <CheckBox fx:id="mushroomToppingRadioButton" text="Mushrooms"
+                        style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;"/>
+                <CheckBox fx:id="mozzarellaToppingRadioButton" text="Mozzarella"
+                        style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;"/>
+                <CheckBox fx:id="asiagoToppingRadioButton" text="Asiago"
+                        style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;"/>
+            </HBox>
+        </VBox>
+
+        <Separator prefWidth="500.0" style="-fx-background-color: #bdc3c7;"/>
+
+        <!-- Action Buttons -->
+        <HBox alignment="CENTER" spacing="15.0">
+            <Button fx:id="createPizzaButton" text="ADD TO CART" onAction="#addPizzaToCart"
+                    prefWidth="150.0" prefHeight="40.0"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 6;"/>
+            <Button fx:id="homeButton" text="BACK TO MENU" onAction="#switchToHomepage"
+                    prefWidth="150.0" prefHeight="40.0"
+                    style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 6;"/>
+            <Button fx:id="receiptButton" text="CHECKOUT" onAction="#switchToReceipt"
+                    prefWidth="150.0" prefHeight="40.0"
+                    style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 6;"/>
+        </HBox>
+
+        <!-- Order Summary -->
+        <VBox spacing="10.0" alignment="CENTER" prefWidth="500.0">
+            <Label text="Your Order" style="-fx-text-fill: #34495e; -fx-font-weight: bold;">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+            <TextArea fx:id="receiptList" prefHeight="200.0" editable="false"
+                    style="-fx-control-inner-background: white; -fx-border-color: #bdc3c7; -fx-border-radius: 6; -fx-background-radius: 6;"/>
+        </VBox>
+    </children>
+    <padding>
+        <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+    </padding>
+</VBox>

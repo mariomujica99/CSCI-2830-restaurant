@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.food.BurgerController">
+    <children>
+        <Label text="Create Your Burger" />
+
+        <Label text="Select Bun" />
+        <fx:define>
+            <ToggleGroup fx:id="bunGroup" />
+        </fx:define>
+        <HBox alignment="CENTER" spacing="20.0">
+            <RadioButton fx:id="seasameSeedBunRadioButton" text="Sesame Seed Bun" toggleGroup="$bunGroup"/>
+            <RadioButton fx:id="briocheBunRadioButton" text="Brioche Bun" toggleGroup="$bunGroup"/>
+            <RadioButton fx:id="potatoBunRadioButton" text="Potato Bun" toggleGroup="$bunGroup"/>
+        </HBox>
+
+        <Label text="Select Patty" />
+        <fx:define>
+            <ToggleGroup fx:id="pattyGroup" />
+        </fx:define>
+        <HBox alignment="CENTER" spacing="20.0">
+            <RadioButton fx:id="beefPattyRadioButton" text="Beef Patty" toggleGroup="$pattyGroup"/>
+            <RadioButton fx:id="chickenPattyRadioButton" text="Chicken Patty" toggleGroup="$pattyGroup"/>
+            <RadioButton fx:id="veggiePattyRadioButton" text="Veggie Patty" toggleGroup="$pattyGroup"/>
+            <RadioButton fx:id="impossiblePattyRadioButton" text="Impossible Patty" toggleGroup="$pattyGroup"/>
+        </HBox>
+
+        <Label text="Select Cheese" />
+        <fx:define>
+            <ToggleGroup fx:id="cheeseGroup" />
+        </fx:define>
+        <HBox alignment="CENTER" spacing="20.0">
+            <RadioButton fx:id="americanCheeseRadioButton" text="American Cheese" toggleGroup="$cheeseGroup"/>
+            <RadioButton fx:id="swissCheeseRadioButton" text="Swiss Cheese" toggleGroup="$cheeseGroup"/>
+            <RadioButton fx:id="cheddarCheeseRadioButton" text="Cheddar Cheese" toggleGroup="$cheeseGroup"/>
+            <RadioButton fx:id="pepperjackCheeseRadioButton" text="Pepperjack Cheese" toggleGroup="$cheeseGroup"/>
+        </HBox>
+
+        <Label text="Select Your Garnishes" />
+        <HBox alignment="CENTER" spacing="20.0">
+            <CheckBox fx:id="tomatoGarnishRadioButton" text="Tomato"/>
+            <CheckBox fx:id="lettuceGarnishRadioButton" text="Lettuce"/>
+            <CheckBox fx:id="pickleGarnishRadioButton" text="Pickles"/>
+            <CheckBox fx:id="baconGarnishRadioButton" text="Bacon"/>
+        </HBox>
+        <HBox alignment="CENTER" spacing="20.0">
+            <CheckBox fx:id="guacamoleGarnishRadioButton" text="Guacamole"/>
+            <CheckBox fx:id="onionringGarnishRadioButton" text="Onion Rings"/>
+            <CheckBox fx:id="friedeggGarnishRadioButton" text="Fried Egg"/>
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="20.0">
+            <Button fx:id="createBurgerButton" text="Create" onAction="#addBurgerToCart"/>
+            <Button fx:id="homeButton" text="Add Another Item" onAction="#switchToHomepage"/>
+            <Button fx:id="receiptButton" text="Checkout" onAction="#switchToReceipt"/>
+        </HBox>
+
+        <TextArea fx:id="receiptList" text="" />
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>
