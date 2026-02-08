@@ -1,31 +1,151 @@
-## Rio's Restaurant
+## Rio's Restaurant Ordering System
 
-An ordering app for a build-your-own pizza and burger fastfood restaurant. The app tracks the user's selections, displaying them along with their prices. It calculates the subtotal for each pizza and burger, as well as the total of all subtotals. Finally, the app generates a receipt on a separate page, where the pizzas and burgers are listed in order of their prices.
+## Overview
+
+Rio's Restaurant is an interactive ordering application that allows customers to build custom pizzas and burgers with various ingredients. The application tracks user selections, calculates prices dynamically, and generates an itemized receipt with all items sorted by price. This project is a JavaFX-based food ordering application developed for CSCI 2830: Object-Oriented Software Engineering. I used OOP principles including inheritance, polymorphism, encapsulation, and the MVC design pattern.
 
 ## Demo Video
+
+<div align="center">
+
+### Application Walkthrough
+
 https://github.com/user-attachments/assets/b02f2b6b-f9b1-482c-9924-df9cb6346db9
 
+*Watch the complete demo showing pizza building, burger customization, and checkout process*
 
-## Main Menu
-<img width="629" alt="Screen Shot 2025-04-18 at 5 36 57 PM" src="https://github.com/user-attachments/assets/521292cd-6389-457b-a0f4-5c298b54ac4c" />
+</div>
 
-## Build Pizza (Click Create When Done)
-<img width="633" alt="Screen Shot 2025-04-18 at 5 37 06 PM" src="https://github.com/user-attachments/assets/fcdc24e6-57fb-4387-be62-1ab9a23eb9ed" />
+## Technologies
+- Java 17+ - Core programming language
+- JavaFX - GUI framework for user interface
+- Maven - Build automation and dependency management
+- FXML - XML-based UI markup language
 
-## Summary of Pizza (Add Another Item or Checkout)
-<img width="633" alt="Screen Shot 2025-04-18 at 5 37 26 PM" src="https://github.com/user-attachments/assets/9b77db6d-1aea-4331-9deb-edc0afcec724" />
+## Features
 
-## Adding Another Item (Main Menu)
-<img width="631" alt="Screen Shot 2025-04-18 at 5 37 36 PM" src="https://github.com/user-attachments/assets/e1899a30-6738-4398-ab0e-e064e0df8d43" />
+### Core Functionality
+- Build-Your-Own Pizza
+  - Choice of crust type (thin or thick) and ingredient (flour or cauliflower)
+  - Multiple sauce options (tomato or alfredo)
+  - Six topping varieties organized by category (meat, veggie, cheese)
+  - Real-time price calculation
 
-## Build Burger (Click Create When Done)
-<img width="630" alt="Screen Shot 2025-04-18 at 5 37 46 PM" src="https://github.com/user-attachments/assets/722ea08d-41c6-4d15-9057-209bdd21779c" />
+- Build-Your-Own Burger
+  - Three bun options (sesame seed, brioche, potato)
+  - Four patty types (beef, chicken, veggie, impossible)
+  - Four cheese varieties (american, swiss, cheddar, pepperjack)
+  - Seven garnish options (tomato, lettuce, pickle, bacon, guacamole, onion rings, fried egg)
+  - Real-time price calculation
 
-## Summary of Burger (Add Another Item or Checkout)
-<img width="632" alt="Screen Shot 2025-04-18 at 5 38 14 PM" src="https://github.com/user-attachments/assets/04b4ccf0-5793-42a3-b5a4-399ee38e0002" />
+- Order Management
+  - Add multiple pizzas and burgers to a single order
+  - View itemized breakdown for each item
+  - Automatic sorting of items by price
+  - Running total calculation
+  - Receipt generation with order summary
 
-## Reciept (Add Another Item or Complete Order)
-<img width="631" alt="Screen Shot 2025-04-18 at 5 38 39 PM" src="https://github.com/user-attachments/assets/69a02fc4-bec4-4ab7-9391-3a6583e77be3" />
+- User Interface
+  - Input validation (create button disabled until all required selections made)
+  - Clear visual feedback for selections
+  - Easy navigation between screens
+  - Professional receipt display
 
-## After Completing Order You Can Exit
-<img width="635" alt="Screen Shot 2025-04-18 at 5 39 08 PM" src="https://github.com/user-attachments/assets/9b36369c-8bb7-425c-b496-d51892f2f30a" />
+## Usage
+
+### Creating an Order
+
+1. Start at Homepage
+   - Select "Build Pizza" or "Build Burger"
+
+2. Build Your Item
+   - Pizza: Select crust type, crust ingredient, sauce, and at least one topping
+   - Burger: Select bun, patty, cheese, and at least one garnish
+   - The "Create" button enables once all required selections are made
+
+3. Review and Add to Order
+   - View the itemized breakdown with prices
+   - Click "Create Pizza/Burger" to add to your order
+   - Return to homepage to add more items or proceed to checkout
+
+4. Checkout
+   - View complete order summary on receipt page
+   - Items automatically sorted by price
+   - Total price calculated at bottom
+   - Click "Complete Order" to finalize
+
+5. Complete Order
+   - Thank you message displayed
+   - Exit application when ready
+
+## Learning Outcomes
+
+### Design Patterns
+- **MVC (Model-View-Controller)**: Separation of concerns with distinct controller classes for each view
+- **Template Method Pattern**: Abstract base classes define common behavior while subclasses implement specifics
+- **Strategy Pattern**: Composition-based design for combining pizza/burger components
+
+### Key Object-Oriented Engineering Principles
+
+#### 1. Inheritance Hierarchies
+```
+MenuItem (Interface)
+├── Pizza
+├── Burger
+├── PizzaCrust
+│   ├── ThinCrust
+│   └── ThickCrust
+├── PizzaSauce
+│   ├── TomatoSauce
+│   └── AlfredoSauce
+├── PizzaTopping
+│   ├── MeatTopping
+│   │   ├── PepperoniTopping
+│   │   └── SausageTopping
+│   ├── VeggieTopping
+│   │   ├── PepperTopping
+│   │   └── MushroomTopping
+│   └── CheeseTopping
+│       ├── MozzarellaTopping
+│       └── AsiagoTopping
+├── BurgerBun
+│   ├── SesameSeedBun
+│   ├── BriocheBun
+│   └── PotatoBun
+├── BurgerPatty
+│   ├── BeefPatty
+│   ├── ChickenPatty
+│   ├── VeggiePatty
+│   └── ImpossiblePatty
+├── BurgerCheese
+│   ├── AmericanCheese
+│   ├── SwissCheese
+│   ├── CheddarCheese
+│   └── PepperjackCheese
+└── BurgerGarnish
+    ├── TomatoGarnish
+    ├── LettuceGarnish
+    ├── PickleGarnish
+    ├── BaconGarnish
+    ├── GuacamoleGarnish
+    ├── OnionRingGarnish
+    └── FriedEggGarnish
+```
+
+#### 2. Polymorphism
+- All food components implement the `MenuItem` interface
+- Enables consistent price calculation and display across different item types
+- `Comparable<MenuItem>` implementation allows automatic sorting by price
+
+#### 3. Encapsulation
+- Private fields with public getter/setter methods
+- Component lists managed internally by Pizza and Burger classes
+- Centralized receipt management through the App class
+
+#### 4. Composition
+- Pizza and Burger classes composed of multiple MenuItem components
+- Flexible combination of ingredients through ArrayList collections
+
+## Academic Integrity Notice
+
+This project is submitted as academic work for CSCI 2830. Please do not copy or reproduce for academic submissions.
