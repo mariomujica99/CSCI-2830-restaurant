@@ -2,6 +2,10 @@
 
 An ordering app for a build-your-own pizza and burger fastfood restaurant. The app tracks the user's selections, displaying them along with their prices. It calculates the subtotal for each pizza and burger, as well as the total of all subtotals. Finally, the app generates a receipt on a separate page, where the pizzas and burgers are listed in order of their prices.
 
+## Demo Video
+https://github.com/user-attachments/assets/b02f2b6b-f9b1-482c-9924-df9cb6346db9
+
+
 ## Main Menu
 <img width="629" alt="Screen Shot 2025-04-18 at 5 36 57 PM" src="https://github.com/user-attachments/assets/521292cd-6389-457b-a0f4-5c298b54ac4c" />
 
