@@ -144,4 +144,4 @@ MenuItem (Interface)
 
 ## Academic Integrity Notice
 
-This project is submitted as academic work for CSCI 2830: Object-Oriented Software Engineering. Please do not copy or reproduce for academic submissions.
+This project is submitted as academic work for CSCI 2830: Object-Oriented Software Engineering. The code is provided for portfolio purposes. Please do not copy or reproduce for academic submissions.
