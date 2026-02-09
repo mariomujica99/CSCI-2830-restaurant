@@ -12,82 +12,78 @@ Rio's Restaurant is an interactive ordering application that allows customers to
 
 https://github.com/user-attachments/assets/b02f2b6b-f9b1-482c-9924-df9cb6346db9
 
-*Watch the complete demo showing pizza building, burger customization, and checkout process*
+**Watch the complete demo showing pizza building, burger customization, and checkout process**
 
 </div>
 
 ## Technologies
-- Java 17+ - Core programming language
-- JavaFX - GUI framework for user interface
-- Maven - Build automation and dependency management
-- FXML - XML-based UI markup language
+- Java
+- JavaFX
+- Maven
+- FXML
 
 ## Features
 
-### Core Functionality
-- Build-Your-Own Pizza
-  - Choice of crust type (thin or thick) and ingredient (flour or cauliflower)
-  - Multiple sauce options (tomato or alfredo)
-  - Six topping varieties organized by category (meat, veggie, cheese)
-  - Real-time price calculation
+Build-Your-Own Pizza
+- Choice of crust type (thin or thick) and ingredient (flour or cauliflower)
+- Multiple sauce options (tomato or alfredo)
+- Six topping varieties organized by category (meat, veggie, cheese)
+- Real-time price calculation
 
-- Build-Your-Own Burger
-  - Three bun options (sesame seed, brioche, potato)
-  - Four patty types (beef, chicken, veggie, impossible)
-  - Four cheese varieties (american, swiss, cheddar, pepperjack)
-  - Seven garnish options (tomato, lettuce, pickle, bacon, guacamole, onion rings, fried egg)
-  - Real-time price calculation
+Build-Your-Own Burger
+- Three bun options (sesame seed, brioche, potato)
+- Four patty types (beef, chicken, veggie, impossible)
+- Four cheese varieties (american, swiss, cheddar, pepperjack)
+- Seven garnish options (tomato, lettuce, pickle, bacon, guacamole, onion rings, fried egg)
+- Real-time price calculation
 
-- Order Management
-  - Add multiple pizzas and burgers to a single order
-  - View itemized breakdown for each item
-  - Automatic sorting of items by price
-  - Running total calculation
-  - Receipt generation with order summary
+Order Management
+- Add multiple pizzas and burgers to a single order
+- View itemized breakdown for each item
+- Automatic sorting of items by price
+- Running total calculation
+- Receipt generation with order summary
 
-- User Interface
-  - Input validation (create button disabled until all required selections made)
-  - Clear visual feedback for selections
-  - Easy navigation between screens
-  - Professional receipt display
+User Interface
+- Input validation (create button disabled until all required selections made)
+- Clear visual feedback for selections
+- Easy navigation between screens
+- Professional receipt display
 
 ## Usage
 
-### Creating an Order
+Homepage
+ - Select "Build Pizza" or "Build Burger"
 
-1. Start at Homepage
-   - Select "Build Pizza" or "Build Burger"
+Build Your Item
+ - Pizza: Select crust type, crust ingredient, sauce, and at least one topping
+ - Burger: Select bun, patty, cheese, and at least one garnish
+ - The "Create" button enables once all required selections are made
 
-2. Build Your Item
-   - Pizza: Select crust type, crust ingredient, sauce, and at least one topping
-   - Burger: Select bun, patty, cheese, and at least one garnish
-   - The "Create" button enables once all required selections are made
+Review and Add to Order
+ - View the itemized breakdown with prices
+ - Return to homepage to add more items or proceed to checkout
 
-3. Review and Add to Order
-   - View the itemized breakdown with prices
-   - Click "Create Pizza/Burger" to add to your order
-   - Return to homepage to add more items or proceed to checkout
+Checkout
+ - View complete order summary on receipt page
+ - Items automatically sorted by price
+ - Total price calculated at bottom
+ - Click "Complete Order" to finalize
 
-4. Checkout
-   - View complete order summary on receipt page
-   - Items automatically sorted by price
-   - Total price calculated at bottom
-   - Click "Complete Order" to finalize
-
-5. Complete Order
-   - Thank you message displayed
-   - Exit application when ready
+Complete Order
+ - Thank you message displayed
+ - Exit application when ready
 
 ## Learning Outcomes
 
 ### Design Patterns
-- **MVC (Model-View-Controller)**: Separation of concerns with distinct controller classes for each view
-- **Template Method Pattern**: Abstract base classes define common behavior while subclasses implement specifics
-- **Strategy Pattern**: Composition-based design for combining pizza/burger components
+- MVC (Model-View-Controller): Separation of concerns with distinct controller classes for each view
+- Template Method Pattern: Abstract base classes define common behavior while subclasses implement specifics
+- Strategy Pattern: Composition-based design for combining pizza/burger components
 
-### Key Object-Oriented Engineering Principles
+### Object-Oriented Engineering Principles
 
-#### 1. Inheritance Hierarchies
+#### Inheritance Hierarchies
 ```
 MenuItem (Interface)
 ├── Pizza
@@ -132,20 +128,20 @@ MenuItem (Interface)
     └── FriedEggGarnish
 ```
 
-#### 2. Polymorphism
+#### Polymorphism
 - All food components implement the `MenuItem` interface
 - Enables consistent price calculation and display across different item types
 - `Comparable<MenuItem>` implementation allows automatic sorting by price
 
-#### 3. Encapsulation
+#### Encapsulation
 - Private fields with public getter/setter methods
 - Component lists managed internally by Pizza and Burger classes
 - Centralized receipt management through the App class
 
-#### 4. Composition
+#### Composition
 - Pizza and Burger classes composed of multiple MenuItem components
 - Flexible combination of ingredients through ArrayList collections
 
 ## Academic Integrity Notice
 
-This project is submitted as academic work for CSCI 2830. Please do not copy or reproduce for academic submissions.
+This project is submitted as academic work for CSCI 2830: Object-Oriented Software Engineering. Please do not copy or reproduce for academic submissions.
